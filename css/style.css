@@ -1,0 +1,111 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #0B1236;
+  background: rgb(11, 18, 54);
+  background: -webkit-linear-gradient(left, rgba(11, 18, 54, 1) 0%, rgba(5, 10, 33, 1) 35%);
+  background: -o-linear-gradient(left, rgba(11, 18, 54, 1) 0%, rgba(5, 10, 33, 1) 35%);
+  background: linear-gradient(to right, rgba(11, 18, 54, 1) 0%, rgba(5, 10, 33, 1) 35%);
+  color: #fff;
+  text-align: center;
+  min-height: 100vh;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+#qrCode {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+
+body {
+  background-image: url(http://www.biopol.cat/mypics/max/6/60435_bubble-background-png.png);
+  background-image: url(https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_960_720.jpg);
+}
+
+#header {
+  background-image: url(../img/headerLila.png);
+  background-size: cover;
+  width: 100%;
+  height: 100px;
+}
+
+#header img {
+  margin-top: 20px;
+}
+
+#main {
+  padding: 25px;
+  margin-top: 55px;
+}
+
+.card {
+  background-color: #232370;
+  background-color: rgba(255, 255, 255, .2);
+  height: calc(100vh - 235px);
+  overflow-y: scroll;
+  margin-top: 15px;
+}
+
+.headline {
+  margin-top: 10px;
+  color: #61C9A8;
+}
+
+.badge {
+  color: #fff;
+}
+
+.badge-light {
+  color: #212529
+}
+
+.badge-transparent {
+  border: 1px solid grey;
+  padding: 10px 20px;
+  margin: 2px;
+  background-color: rgba(255, 255, 255, .5);
+}
+
+.sentiment {
+  display: block;
+  font-size: 100px;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.changeDay {
+  margin-top: 20px;
+  font-size: 50px;
+  color: #61C9A8;
+}
+
+.cardCollective {
+  height: 100px;
+  text-align: center;
+}
+
+.cardCollective img {
+  width: 40px;
+  margin: 5px auto;
+}
+
+.cardCollective.active {
+  background-color: #fff;
+  color: #000;
+}
+
+.list-group {
+  color: #000;
+}
+
+#keywordList {
+  margin-bottom: 100px;
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+  <link rel="manifest" href="manifest.json">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="msapplication-starturl" content="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <meta charset="utf-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!--<link rel="manifest" href="manifest.json">-->
+  <meta name="theme-color" content="#6D60DD">
+  <title>COINS Predictive Horoscope</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/jqcloud.min.css">
+  <!--<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>-->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"> </script>
+
+</head>
+
+<body>
+
+  <header id="header">
+    <img src="img/logo.png">
+  </header>
+
+  <section id="main">
+
+    <nav id="tribeMenu"></nav>
+
+    <div id="home" class="pagetoggle animated flipInY">
+      <h3>Choose your collective</h3>
+
+      <div class="row">
+        <div class="col-6">
+          <div class="card cardCollective" data-collectiveid="1">
+            Nerd
+            <img src="img/0748-atom.png">
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card cardCollective" data-collectiveid="2">
+            Treehugger
+            <img src="img/0725-tree3.png">
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card cardCollective" data-collectiveid="3">
+            Spiritualist
+            <img src="img/0555-spinner9.png">
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card cardCollective" data-collectiveid="4">
+            Fatherlander
+            <img src="img/0703-plate.png">
+          </div>
+        </div>
+        <!--<div class="col-6">
+          <div class="card cardCollective" data-collectiveid="4">
+            Vegan
+            <img src="img/0703-plate.png">
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card cardCollective" data-collectiveid="5">
+            Fitness
+            <img src="img/0809-accessibility.png">
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card cardCollective" data-collectiveid="6">
+            Yolo
+            <img src="img/0956-spotlight2.png">
+          </div>
+        </div>-->
+      </div>
+    </div>
+
+    <div id="predictionDIV" class="card pagetoggle animated flipInY" style="display:none">
+      <div class="card-header">
+        <i class="fa fa-chevron-left changeDay pull-left"></i>
+        <i class="fa fa-chevron-right changeDay pull-right"></i>
+        <h3 class="headline day">10.</h3>
+        <h4 class="headline month">Dez</h4>
+      </div>
+      <div class="card-body">
+        <div id="result"></div>
+        <div style="display:none">
+          <input id="value1" type="number" value="70">
+          <input id="value2" type="number" value="80">
+          <input id="value3" type="number" value="90">
+        </div>
+
+        <div id="wordCloud"></div>
+
+        <ul id="keywordList" class="list-group"></ul>
+      </div>
+    </div>
+
+    <div id="treehugger" class="card pagetoggle animated flipInY" style="display:none">
+      <div class="card-header">
+        <i class="fa fa-chevron-left changeDay pull-left"></i>
+        <i class="fa fa-chevron-right changeDay pull-right"></i>
+        <h3 class="headline day">10.</h3>
+        <h4 class="headline month">Dez</h4>
+      </div>
+      <div class="card-body">
+        <div id="result">
+          <div class="prediction animated lightSpeedIn">
+
+            <span class="sentiment">😱</span>
+
+            <p>Sie packen Ihre Aufgaben motiviert an. Kreatives gelingt Ihnen dabei besonders leicht, Sie punkten mit Niveau und Know-how. Die analysierten Daten deuten an, dass sich das ab 17.1. auch finanziell bezahlt macht. Wer sich schon länger
+              einen kleinen Luxus leisten will: Jetzt ist die Zeit dafür gekommen.</p>
+
+            <p>Sterne schauen ist nicht schwer - Sterne deuten hingegen sehr!</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/fontawesome.min.js"></script>
+
+  <script src="js/ml.js"></script>
+  <script src="js/jqcloud.min.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
